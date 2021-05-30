@@ -1,0 +1,13 @@
+
+<%= form_for(:user, html: {class: "ui form", role: "form"}, url: signup_path) do |f| %>
+  <div class="field">
+    <%= f.label :username, class: "ui yellow label" %>
+    <%= f.text_field :username, placeholder: "Enter a Username" %>
+  </div>
+  <div class="field">
+    <%= f.label :password, class: "ui yellow label" %>
+    <%= f.password_field :password, placeholder: "Enter your password" %>
+  </div>
+  
+  <%= f.submit "sign Up", class: "ui button" %>
+<%end%>
