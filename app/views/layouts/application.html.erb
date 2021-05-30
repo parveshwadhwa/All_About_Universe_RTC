@@ -15,9 +15,9 @@
   <div class="ui small inverted menu">
       <div class="ui container">
         <%= link_to 'Chatroom', root_path, class: "item" %>
-        <a class="item">
-          Messages
-        </a>
+        <% if !logged_in? %>
+            <%= link_to 'Sign Up', signup_path, class: "item" %>
+        <%end%>
         <div class="right menu">
           <div class="ui simple dropdown item">
             Account <i class="dropdown icon"></i>
