@@ -8,10 +8,19 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 require("semantic-ui-sass")
+require("jquery")
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+let scroll_bottom = function()
+{
+  if ($('#scroll').length > 0) 
+  {
+    $('#scroll').scrollTop($('#scroll')[0].scrollHeight);
+  }
+}
 
 $(document).on('turbolinks:load', function(){
     $('.ui.dropdown').dropdown();
@@ -21,7 +30,9 @@ $(document).on('turbolinks:load', function(){
       .closest('.message')
       .transition('fade')
     ;
-  })
-;
+  });
+
+  scroll_bottom();
+
 })
 
